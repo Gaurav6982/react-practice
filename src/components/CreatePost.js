@@ -9,6 +9,7 @@ function CreatePost() {
         axios.post('https://jsonplaceholder.typicode.com/posts',{
             title:title,
             body:body,
+            userId:1
         },{
             headers: {
                 'Access-Control-Allow-Origin' : '*'
@@ -17,7 +18,7 @@ function CreatePost() {
         .then(function (response) {
             alert("Post Created Successfully");
             setTimeout(function(){
-                history.push("/home");
+                history.push("/");
             },1000);
         })
         .catch(function (error) {
